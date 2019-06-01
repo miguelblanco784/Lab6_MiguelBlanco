@@ -317,7 +317,7 @@ public class Principal extends javax.swing.JFrame {
 
         serie3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sitcom", "Drama", "Novelas", "Suspenso", "YYY" }));
 
-        jButton8.setText("Agregar Pelicula");
+        jButton8.setText("Agregar Series");
         jButton8.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jButton8ActionPerformed(evt);
@@ -908,6 +908,7 @@ public class Principal extends javax.swing.JFrame {
 
     private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
 
+        
         try {
             boolean a = false, b = false;
             if (jRadioButton1.isSelected()) {
@@ -922,7 +923,7 @@ public class Principal extends javax.swing.JFrame {
             DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
             DefaultMutableTreeNode p = new DefaultMutableTreeNode(serie1.getText());
 
-            switch (peli3.getSelectedIndex()) {
+            switch (serie3.getSelectedIndex()) {
                 case 0:
                     ((DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(0)).add(p);
                     break;
@@ -945,6 +946,7 @@ public class Principal extends javax.swing.JFrame {
                 default:
                     break;
             }
+            jd_series.setVisible(false);
         } catch (Exception e) {
         }
 
