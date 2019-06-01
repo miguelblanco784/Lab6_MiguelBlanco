@@ -7,7 +7,7 @@ public class Serie {
     private String nombre;
     private int duracion;
     private String categorias;
-    private ArrayList<String> actores = new ArrayList();
+    private String actores ;
     private int temporadas;
     private String productora;
     private String idiomaor;
@@ -17,16 +17,19 @@ public class Serie {
     public Serie() {
     }
 
-    public Serie(String nombre, int duracion, String categorias, int temporadas, String productora, String idiomaor, boolean doblaje, boolean subtitulos) {
+    public Serie(String nombre, int duracion, String categorias, String actores, int temporadas, String productora, String idiomaor, boolean doblaje, boolean subtitulos) {
         this.nombre = nombre;
         this.duracion = duracion;
         this.categorias = categorias;
+        this.actores = actores;
         this.temporadas = temporadas;
         this.productora = productora;
         this.idiomaor = idiomaor;
         this.doblaje = doblaje;
         this.subtitulos = subtitulos;
     }
+
+   
 
     public String getNombre() {
         return nombre;
@@ -52,11 +55,11 @@ public class Serie {
         this.categorias = categorias;
     }
 
-    public ArrayList<String> getActores() {
+    public String getActores() {
         return actores;
     }
 
-    public void setActores(ArrayList<String> actores) {
+    public void setActores(String actores) {
         this.actores = actores;
     }
 

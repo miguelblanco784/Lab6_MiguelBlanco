@@ -1,0 +1,22 @@
+Hola
+Miguel;70;Animacion;[];;wadwda;wdawd;false;false;
+wdwad;4;Terror;[];;wadwdad;wadwad;false;false;
+wdwad;71;Ciencia Ficcion;[];;wad;wad;false;false;
+wdadw;4;Terror;[];;wadwda;wadda;false;false;
+4;Accion;[];;waddw;wadwda;false;false;
+
+qwdad;3;Ciencia Ficcion;[];;wad;wda;false;false;
+
+
+
+
+
+
+
+
+
+
+
+
+
+

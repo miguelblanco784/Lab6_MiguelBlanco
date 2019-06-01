@@ -7,7 +7,7 @@ public class Pelicula {
     private String nombre;
     private int duracion;
     private String categoria;
-    private ArrayList<String> actores = new ArrayList();
+    private String actores;
     private String directores;
     private String compania;
     private String idioma;
@@ -17,16 +17,21 @@ public class Pelicula {
     public Pelicula() {
     }
 
-    public Pelicula(String nombre, int duracion, String categoria, String directores, String compania, String idioma, boolean doblaje, boolean subtitulos) {
+    public Pelicula(String nombre, int duracion, String categoria, String actores, String directores, String compania, String idioma, boolean doblaje, boolean subtitulos) {
         this.nombre = nombre;
         this.duracion = duracion;
         this.categoria = categoria;
+        this.actores = actores;
         this.directores = directores;
         this.compania = compania;
         this.idioma = idioma;
         this.doblaje = doblaje;
         this.subtitulos = subtitulos;
     }
+
+    
+
+    
 
     public String getNombre() {
         return nombre;
@@ -52,11 +57,11 @@ public class Pelicula {
         this.categoria = categoria;
     }
 
-    public ArrayList<String> getActores() {
+    public String getActores() {
         return actores;
     }
 
-    public void setActores(ArrayList<String> actores) {
+    public void setActores(String actores) {
         this.actores = actores;
     }
 
@@ -104,5 +109,5 @@ public class Pelicula {
     public String toString() {
         return "Pelicula{" + "nombre=" + nombre + ", duracion=" + duracion + ", categoria=" + categoria + ", actores=" + actores + ", directores=" + directores + ", compania=" + compania + ", idioma=" + idioma + ", doblaje=" + doblaje + ", subtitulos=" + subtitulos + '}';
     }
-    
+
 }

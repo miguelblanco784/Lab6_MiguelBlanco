@@ -6,8 +6,10 @@
 package lab6_miguelblancoo;
 
 import java.io.BufferedReader;
+import java.io.BufferedWriter;
 import java.io.File;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -15,7 +17,9 @@ import java.nio.file.Paths;
 import java.util.ArrayList;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import javax.swing.DefaultListModel;
 import javax.swing.JFileChooser;
+import javax.swing.JOptionPane;
 import javax.swing.tree.DefaultMutableTreeNode;
 import javax.swing.tree.DefaultTreeModel;
 
@@ -49,10 +53,56 @@ public class Principal extends javax.swing.JFrame {
         jButton3 = new javax.swing.JButton();
         jButton4 = new javax.swing.JButton();
         jButton5 = new javax.swing.JButton();
+        jd_pelicula = new javax.swing.JDialog();
+        jLabel2 = new javax.swing.JLabel();
+        peli1 = new javax.swing.JTextField();
+        jLabel3 = new javax.swing.JLabel();
+        jLabel4 = new javax.swing.JLabel();
+        peli2 = new javax.swing.JSpinner();
+        jLabel5 = new javax.swing.JLabel();
+        peli4 = new javax.swing.JTextField();
+        jLabel6 = new javax.swing.JLabel();
+        peli5 = new javax.swing.JTextField();
+        jLabel7 = new javax.swing.JLabel();
+        peli6 = new javax.swing.JTextField();
+        jLabel8 = new javax.swing.JLabel();
+        peli7 = new javax.swing.JComboBox<>();
+        jLabel9 = new javax.swing.JLabel();
+        jRadioButton1 = new javax.swing.JRadioButton();
+        jRadioButton2 = new javax.swing.JRadioButton();
+        jLabel10 = new javax.swing.JLabel();
+        jRadioButton3 = new javax.swing.JRadioButton();
+        jRadioButton4 = new javax.swing.JRadioButton();
+        jButton7 = new javax.swing.JButton();
+        peli3 = new javax.swing.JComboBox<>();
+        jd_series = new javax.swing.JDialog();
+        jLabel11 = new javax.swing.JLabel();
+        serie1 = new javax.swing.JTextField();
+        jLabel12 = new javax.swing.JLabel();
+        jLabel13 = new javax.swing.JLabel();
+        serie2 = new javax.swing.JSpinner();
+        jLabel14 = new javax.swing.JLabel();
+        serie4 = new javax.swing.JTextField();
+        jLabel15 = new javax.swing.JLabel();
+        serie3 = new javax.swing.JComboBox<>();
+        jButton8 = new javax.swing.JButton();
+        jRadioButton5 = new javax.swing.JRadioButton();
+        jRadioButton6 = new javax.swing.JRadioButton();
+        jLabel16 = new javax.swing.JLabel();
+        jRadioButton7 = new javax.swing.JRadioButton();
+        jRadioButton8 = new javax.swing.JRadioButton();
+        jLabel17 = new javax.swing.JLabel();
+        serie7 = new javax.swing.JComboBox<>();
+        jLabel18 = new javax.swing.JLabel();
+        serie6 = new javax.swing.JTextField();
+        jLabel19 = new javax.swing.JLabel();
+        serie5 = new javax.swing.JSpinner();
+        Doblada = new javax.swing.ButtonGroup();
+        Subtitulada = new javax.swing.ButtonGroup();
         jLabel1 = new javax.swing.JLabel();
         jb_login = new javax.swing.JButton();
         tf_usuario = new javax.swing.JTextField();
-        tf_contasena = new javax.swing.JTextField();
+        tf_contrasena = new javax.swing.JTextField();
 
         javax.swing.tree.DefaultMutableTreeNode treeNode1 = new javax.swing.tree.DefaultMutableTreeNode("Nesflis");
         arbol.setModel(new javax.swing.tree.DefaultTreeModel(treeNode1));
@@ -64,14 +114,34 @@ public class Principal extends javax.swing.JFrame {
                 jButton1MouseClicked(evt);
             }
         });
+        jButton1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton1ActionPerformed(evt);
+            }
+        });
 
         jButton2.setText("Agregar Serie");
+        jButton2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton2ActionPerformed(evt);
+            }
+        });
 
         jButton3.setText("Agregar Pelicula");
+        jButton3.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton3ActionPerformed(evt);
+            }
+        });
 
         jButton4.setText("LogOut");
 
         jButton5.setText("Guardar");
+        jButton5.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton5ActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout jd_arbolLayout = new javax.swing.GroupLayout(jd_arbol.getContentPane());
         jd_arbol.getContentPane().setLayout(jd_arbolLayout);
@@ -83,27 +153,283 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jButton4, javax.swing.GroupLayout.PREFERRED_SIZE, 165, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 139, Short.MAX_VALUE)
-                .addGroup(jd_arbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton3, javax.swing.GroupLayout.DEFAULT_SIZE, 295, Short.MAX_VALUE))
+                .addGroup(jd_arbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jScrollPane1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton1, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton3, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jButton2, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 295, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap())
         );
         jd_arbolLayout.setVerticalGroup(
             jd_arbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(jd_arbolLayout.createSequentialGroup()
                 .addGap(14, 14, 14)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 340, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                .addComponent(jButton3, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 375, Short.MAX_VALUE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(jd_arbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_arbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(jButton5)
+                        .addComponent(jButton4))
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jd_arbolLayout.createSequentialGroup()
+                        .addComponent(jButton1)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton3)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jButton2)))
+                .addContainerGap())
+        );
+
+        jLabel2.setText("Nombre");
+
+        jLabel3.setText("Duracion");
+
+        jLabel4.setText("Categoria");
+
+        jLabel5.setText("Actores");
+
+        jLabel6.setText("Director");
+
+        jLabel7.setText("Casa Productora");
+
+        jLabel8.setText("Idioma");
+
+        peli7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Ingles", "Aleman", "Frances" }));
+
+        jLabel9.setText("Doblada");
+
+        Doblada.add(jRadioButton1);
+        jRadioButton1.setText("SI");
+
+        Doblada.add(jRadioButton2);
+        jRadioButton2.setText("No");
+
+        jLabel10.setText("Subtitulada");
+
+        Subtitulada.add(jRadioButton3);
+        jRadioButton3.setText("Si");
+
+        Subtitulada.add(jRadioButton4);
+        jRadioButton4.setText("No");
+
+        jButton7.setText("Agregar Pelicula");
+        jButton7.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton7ActionPerformed(evt);
+            }
+        });
+
+        peli3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Accion", "Animacion", "Ciencia Ficcion", "Fantasia", "Romanticas", "Suspenso", "Terror" }));
+
+        javax.swing.GroupLayout jd_peliculaLayout = new javax.swing.GroupLayout(jd_pelicula.getContentPane());
+        jd_pelicula.getContentPane().setLayout(jd_peliculaLayout);
+        jd_peliculaLayout.setHorizontalGroup(
+            jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_peliculaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_peliculaLayout.createSequentialGroup()
+                        .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel3)
+                            .addComponent(jLabel4)
+                            .addComponent(jLabel2)
+                            .addComponent(jLabel5)
+                            .addComponent(jLabel6)
+                            .addComponent(jLabel7)
+                            .addComponent(jLabel8)
+                            .addComponent(jLabel9)
+                            .addComponent(jLabel10))
+                        .addGap(6, 6, 6)
+                        .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_peliculaLayout.createSequentialGroup()
+                                .addComponent(jRadioButton3)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton4))
+                            .addGroup(jd_peliculaLayout.createSequentialGroup()
+                                .addComponent(jRadioButton1)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton2, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(peli3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(peli1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(peli2, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(peli4, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(peli5, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(peli6, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(peli7, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                    .addComponent(jButton7))
+                .addContainerGap(127, Short.MAX_VALUE))
+        );
+        jd_peliculaLayout.setVerticalGroup(
+            jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_peliculaLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel2)
+                    .addComponent(peli1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addGroup(jd_arbolLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jButton1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(jButton5)
-                    .addComponent(jButton4))
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(peli2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel3))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel4)
+                    .addComponent(peli3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(peli4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(peli5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel6))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel7)
+                    .addComponent(peli6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel8)
+                    .addComponent(peli7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel9)
+                    .addComponent(jRadioButton1)
+                    .addComponent(jRadioButton2))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_peliculaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel10)
+                    .addComponent(jRadioButton3)
+                    .addComponent(jRadioButton4))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 74, Short.MAX_VALUE)
+                .addComponent(jButton7)
+                .addContainerGap())
+        );
+
+        jLabel11.setText("Nombre");
+
+        jLabel12.setText("Duracion");
+
+        jLabel13.setText("Categoria");
+
+        jLabel14.setText("Actores");
+
+        jLabel15.setText("Temporadas");
+
+        serie3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Sitcom", "Drama", "Novelas", "Suspenso", "YYY" }));
+
+        jButton8.setText("Agregar Pelicula");
+        jButton8.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jButton8ActionPerformed(evt);
+            }
+        });
+
+        Subtitulada.add(jRadioButton5);
+        jRadioButton5.setText("No");
+
+        Subtitulada.add(jRadioButton6);
+        jRadioButton6.setSelected(true);
+        jRadioButton6.setText("Si");
+
+        jLabel16.setText("Subtitulada");
+
+        Doblada.add(jRadioButton7);
+        jRadioButton7.setText("No");
+
+        Doblada.add(jRadioButton8);
+        jRadioButton8.setSelected(true);
+        jRadioButton8.setText("SI");
+
+        jLabel17.setText("Doblada");
+
+        serie7.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Español", "Ingles", "Aleman", "Frances" }));
+
+        jLabel18.setText("Idioma");
+
+        jLabel19.setText("Casa Productora");
+
+        javax.swing.GroupLayout jd_seriesLayout = new javax.swing.GroupLayout(jd_series.getContentPane());
+        jd_series.getContentPane().setLayout(jd_seriesLayout);
+        jd_seriesLayout.setHorizontalGroup(
+            jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_seriesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(jd_seriesLayout.createSequentialGroup()
+                        .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(jLabel12)
+                            .addComponent(jLabel13)
+                            .addComponent(jLabel11)
+                            .addComponent(jLabel14)
+                            .addComponent(jLabel15)
+                            .addComponent(jLabel19)
+                            .addComponent(jLabel18)
+                            .addComponent(jLabel17)
+                            .addComponent(jLabel16))
+                        .addGap(6, 6, 6)
+                        .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(jd_seriesLayout.createSequentialGroup()
+                                .addComponent(jRadioButton6)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton5))
+                            .addGroup(jd_seriesLayout.createSequentialGroup()
+                                .addComponent(jRadioButton8)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jRadioButton7, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                                .addComponent(serie3, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(serie1, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(serie2, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(serie4, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(serie6, javax.swing.GroupLayout.Alignment.LEADING)
+                                .addComponent(serie7, javax.swing.GroupLayout.Alignment.LEADING, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(serie5, javax.swing.GroupLayout.Alignment.LEADING))))
+                    .addComponent(jButton8))
+                .addContainerGap(150, Short.MAX_VALUE))
+        );
+        jd_seriesLayout.setVerticalGroup(
+            jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(jd_seriesLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel11)
+                    .addComponent(serie1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(serie2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel12))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel13)
+                    .addComponent(serie3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(serie4, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(jLabel14))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel15)
+                    .addComponent(serie5, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel19)
+                    .addComponent(serie6, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel18)
+                    .addComponent(serie7, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel17)
+                    .addComponent(jRadioButton8)
+                    .addComponent(jRadioButton7))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGroup(jd_seriesLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jLabel16)
+                    .addComponent(jRadioButton6)
+                    .addComponent(jRadioButton5))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
+                .addComponent(jButton8)
                 .addContainerGap())
         );
 
@@ -132,15 +458,15 @@ public class Principal extends javax.swing.JFrame {
             }
         });
 
-        tf_contasena.setText("Contraseña");
-        tf_contasena.addMouseListener(new java.awt.event.MouseAdapter() {
+        tf_contrasena.setText("Contraseña");
+        tf_contrasena.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
-                tf_contasenaMouseClicked(evt);
+                tf_contrasenaMouseClicked(evt);
             }
         });
-        tf_contasena.addActionListener(new java.awt.event.ActionListener() {
+        tf_contrasena.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                tf_contasenaActionPerformed(evt);
+                tf_contrasenaActionPerformed(evt);
             }
         });
 
@@ -157,7 +483,7 @@ public class Principal extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jb_login, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 85, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(tf_usuario, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(tf_contasena, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
+                    .addComponent(tf_contrasena, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, 140, Short.MAX_VALUE))
                 .addContainerGap())
         );
         layout.setVerticalGroup(
@@ -168,7 +494,7 @@ public class Principal extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 122, Short.MAX_VALUE)
                 .addComponent(tf_usuario, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(tf_contasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(tf_contrasena, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jb_login)
                 .addContainerGap())
@@ -182,15 +508,15 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_usuarioActionPerformed
 
-    private void tf_contasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contasenaActionPerformed
-        tf_contasena.setText("");
+    private void tf_contrasenaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_tf_contrasenaActionPerformed
+        tf_contrasena.setText("");
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_contasenaActionPerformed
+    }//GEN-LAST:event_tf_contrasenaActionPerformed
 
 
     private void jb_loginActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jb_loginActionPerformed
-        String usuario = tf_usuario.getText();
-        String contrasena = tf_usuario.getText();
+        String usuario = tf_usuario.getText().toLowerCase();
+        String contrasena = tf_contrasena.getText().toLowerCase();
         boolean us = false;
 
         File archivo = null;
@@ -200,20 +526,26 @@ public class Principal extends javax.swing.JFrame {
             archivo = new File("./Usuarios.txt");
             fr = new FileReader(archivo);
             br = new BufferedReader(fr);
-//            String[] t = usuario.split(";");
-//                System.out.println(t[0]);
-//                System.out.println(t[2]);
 
-            while ((usuario = br.readLine()) != null) {
-                String[] t = usuario.split(";");
-                if (usuario.equals(t[0])) {
-                    System.out.println(t[0]);
+            String linea;
+            while ((linea = br.readLine()) != null) {
+                String[] t = linea.split(";");
+                if (t[0].equals(usuario)) {
+                    if (t[2].equals(contrasena)) {
+                        us = true;
 
+                    }
                 }
             }
 
             if (us) {
-                System.out.println("Lo logre");
+                this.setVisible(false);
+                jd_arbol.setModal(true);
+                jd_arbol.pack();
+                jd_arbol.setLocationRelativeTo(this);
+                jd_arbol.setVisible(true);
+            } else {
+                JOptionPane.showMessageDialog(this, "Usuario incorrecto!");
             }
         } catch (Exception e) {
         }
@@ -225,11 +557,6 @@ public class Principal extends javax.swing.JFrame {
             Logger.getLogger(Principal.class.getName()).log(Level.SEVERE, null, ex);
         }
 
-        this.setVisible(false);
-        jd_arbol.setModal(true);
-        jd_arbol.pack();
-        jd_arbol.setLocationRelativeTo(this);
-        jd_arbol.setVisible(true);
         // TODO add your handling code here:
     }//GEN-LAST:event_jb_loginActionPerformed
 
@@ -239,11 +566,11 @@ public class Principal extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_tf_usuarioMouseClicked
 
-    private void tf_contasenaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_contasenaMouseClicked
-        tf_contasena.setText("");
+    private void tf_contrasenaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_tf_contrasenaMouseClicked
+        tf_contrasena.setText("");
 
         // TODO add your handling code here:
-    }//GEN-LAST:event_tf_contasenaMouseClicked
+    }//GEN-LAST:event_tf_contrasenaMouseClicked
 
     private void jButton1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jButton1MouseClicked
         DefaultTreeModel m = (DefaultTreeModel) arbol.getModel();
@@ -253,6 +580,383 @@ public class Principal extends javax.swing.JFrame {
         listar_no_orden(f, (DefaultMutableTreeNode) m.getRoot());
         // TODO add your handling code here:
     }//GEN-LAST:event_jButton1MouseClicked
+
+    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+        jd_pelicula.setModal(true);
+        jd_pelicula.pack();
+        jd_pelicula.setLocationRelativeTo(this);
+        jd_pelicula.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton3ActionPerformed
+
+    private void jButton7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton7ActionPerformed
+        try {
+            boolean a = false, b = false;
+            if (jRadioButton1.isSelected()) {
+                a = true;
+            }
+            if (jRadioButton3.isSelected()) {
+                b = false;
+            }
+
+            peliculas.add(new Pelicula(peli1.getText(), (Integer) peli2.getValue(), (String) peli3.getSelectedItem(), peli4.getText(), peli5.getText(), peli6.getText(), (String) peli7.getSelectedItem(), a, b));
+
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) arbol.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(peli1.getText());
+
+            switch (peli3.getSelectedIndex()) {
+                case 0:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(0)).add(p);
+                    break;
+                case 1:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(1)).add(p);
+
+                    break;
+                case 2:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(2)).add(p);
+
+                    break;
+                case 3:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(3)).add(p);
+
+                    break;
+                case 4:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(4)).add(p);
+
+                    break;
+                case 5:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(0).getChildAt(5)).add(p);
+
+                    break;
+                default:
+                    break;
+            }
+            modeloARBOL.reload();
+
+            jd_pelicula.setVisible(false);
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton7ActionPerformed
+
+    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
+
+    }//GEN-LAST:event_jButton1ActionPerformed
+
+    private void jButton5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton5ActionPerformed
+        try {
+            File archivo = null;
+            FileReader fr = null;
+            BufferedReader br = null;
+            FileWriter fw = null;
+            BufferedWriter bw = null;
+            FileWriter kw = null;
+
+            for (int i = 0; i < peliculas.size(); i++) {
+                String k = peliculas.get(i).getCategoria();
+                String nombre = peliculas.get(i).getNombre();
+                switch (k) {
+                    case "Accion":
+                        System.out.println(peliculas.get(0).getActores());
+                        archivo = new File(".\\Nesflis\\Peliculas\\Accion\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Accion\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Animacion":
+                        archivo = new File(".\\Nesflis\\Peliculas\\Animacion\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Animacion\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Ciencia Ficcion":
+                        archivo = new File(".\\Nesflis\\Peliculas\\Ciencia Ficcion\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Ciencia Ficcion\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Fantasia":
+                        archivo = new File(".\\Nesflis\\Peliculas\\Fantasia\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Fantasia\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Romanticas":
+                        archivo = new File(".\\Nesflis\\Peliculas\\Romanticas\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Romanticas\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Suspenso":
+                        archivo = new File(".\\Nesflis\\Peliculas\\Suspenso\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Suspenso\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Terror":
+                        archivo = new File(".\\Nesflis\\Peliculas\\Terror\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Peliculas\\Terror\\" + nombre + ".txt", false);
+                        kw.write(peliculas.get(i).getNombre() + ";");
+                        kw.write(peliculas.get(i).getDuracion() + ";");
+                        kw.write(peliculas.get(i).getCategoria() + ";");
+                        kw.write(peliculas.get(i).getActores() + ";");
+                        kw.write(peliculas.get(i).getDirectores() + ";");
+                        kw.write(peliculas.get(i).getCompania() + ";");
+                        kw.write(peliculas.get(i).getIdioma() + ";");
+                        kw.write(peliculas.get(i).isDoblaje() + ";");
+                        kw.write(peliculas.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+            }
+            peliculas.clear();
+
+            for (int i = 0; i < series.size(); i++) {
+                String k = series.get(i).getCategorias();
+                String nombre = series.get(i).getNombre();
+                switch (nombre) {
+                    case "Drama":
+                        archivo = new File(".\\Nesflis\\Series\\Drama\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Series\\Drama\\" + nombre + ".txt", false);
+                        kw.write(series.get(i).getNombre() + ";");
+                        kw.write(series.get(i).getDuracion() + ";");
+                        kw.write(series.get(i).getCategorias() + ";");
+                        kw.write(series.get(i).getActores() + ";");
+                        kw.write(series.get(i).getTemporadas() + ";");
+                        kw.write(series.get(i).getProductora() + ";");
+                        kw.write(series.get(i).getIdiomaor() + ";");
+                        kw.write(series.get(i).isDoblaje() + ";");
+                        kw.write(series.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Novelas":
+                        archivo = new File(".\\Nesflis\\Series\\Novelas\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Series\\Novelas\\" + nombre + ".txt", false);
+                        kw.write(series.get(i).getNombre() + ";");
+                        kw.write(series.get(i).getDuracion() + ";");
+                        kw.write(series.get(i).getCategorias() + ";");
+                        kw.write(series.get(i).getActores() + ";");
+                        kw.write(series.get(i).getTemporadas() + ";");
+                        kw.write(series.get(i).getProductora() + ";");
+                        kw.write(series.get(i).getIdiomaor() + ";");
+                        kw.write(series.get(i).isDoblaje() + ";");
+                        kw.write(series.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Sitcom":
+                        archivo = new File(".\\Nesflis\\Series\\Sitcom\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Series\\Sitcom\\" + nombre + ".txt", false);
+                        kw.write(series.get(i).getNombre() + ";");
+                        kw.write(series.get(i).getDuracion() + ";");
+                        kw.write(series.get(i).getCategorias() + ";");
+                        kw.write(series.get(i).getActores() + ";");
+                        kw.write(series.get(i).getTemporadas() + ";");
+                        kw.write(series.get(i).getProductora() + ";");
+                        kw.write(series.get(i).getIdiomaor() + ";");
+                        kw.write(series.get(i).isDoblaje() + ";");
+                        kw.write(series.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "Suspenso":
+                        archivo = new File(".\\Nesflis\\Series\\Suspenso\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Series\\Suspenso\\" + nombre + ".txt", false);
+                        kw.write(series.get(i).getNombre() + ";");
+                        kw.write(series.get(i).getDuracion() + ";");
+                        kw.write(series.get(i).getCategorias() + ";");
+                        kw.write(series.get(i).getActores() + ";");
+                        kw.write(series.get(i).getTemporadas() + ";");
+                        kw.write(series.get(i).getProductora() + ";");
+                        kw.write(series.get(i).getIdiomaor() + ";");
+                        kw.write(series.get(i).isDoblaje() + ";");
+                        kw.write(series.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    case "YYY":
+                        archivo = new File(".\\Nesflis\\Series\\YYY\\" + nombre + ".txt");
+                        fw = new FileWriter(archivo, true);
+                        bw = new BufferedWriter(fw);
+                        kw = new FileWriter(".\\Nesflis\\Series\\YYY\\" + nombre + ".txt", false);
+                        kw.write(series.get(i).getNombre() + ";");
+                        kw.write(series.get(i).getDuracion() + ";");
+                        kw.write(series.get(i).getCategorias() + ";");
+                        kw.write(series.get(i).getActores() + ";");
+                        kw.write(series.get(i).getTemporadas() + ";");
+                        kw.write(series.get(i).getProductora() + ";");
+                        kw.write(series.get(i).getIdiomaor() + ";");
+                        kw.write(series.get(i).isDoblaje() + ";");
+                        kw.write(series.get(i).isSubtitulos() + ";");
+                        kw.close();
+
+                        bw.newLine();
+                        bw.flush();
+                        break;
+                    default:
+                        throw new AssertionError();
+                }
+            }
+            series.clear();
+        } catch (Exception e) {
+        }
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton5ActionPerformed
+
+    private void jButton8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton8ActionPerformed
+
+        try {
+            boolean a = false, b = false;
+            if (jRadioButton1.isSelected()) {
+                a = true;
+            }
+            if (jRadioButton3.isSelected()) {
+                b = false;
+            }
+            series.add(new Serie(serie1.getText(), (Integer) serie2.getValue(), (String) serie3.getSelectedItem(), serie4.getText(), (Integer) serie5.getValue(), serie6.getText(), (String) serie7.getSelectedItem(), a, b));
+
+            DefaultTreeModel modeloARBOL = (DefaultTreeModel) arbol.getModel();
+            DefaultMutableTreeNode raiz = (DefaultMutableTreeNode) modeloARBOL.getRoot();
+            DefaultMutableTreeNode p = new DefaultMutableTreeNode(serie1.getText());
+
+            switch (peli3.getSelectedIndex()) {
+                case 0:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(0)).add(p);
+                    break;
+                case 1:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(1)).add(p);
+
+                    break;
+                case 2:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(2)).add(p);
+
+                    break;
+                case 3:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(3)).add(p);
+
+                    break;
+                case 4:
+                    ((DefaultMutableTreeNode) raiz.getChildAt(1).getChildAt(4)).add(p);
+
+                    break;
+                default:
+                    break;
+            }
+        } catch (Exception e) {
+        }
+
+    }//GEN-LAST:event_jButton8ActionPerformed
+
+    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+        jd_series.setModal(true);
+        jd_series.pack();
+        jd_series.setLocationRelativeTo(this);
+        jd_series.setVisible(true);
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jButton2ActionPerformed
 
     public void listar_no_orden(File p_raiz, DefaultMutableTreeNode nodo) {
         try {
@@ -306,19 +1010,66 @@ public class Principal extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.ButtonGroup Doblada;
+    private javax.swing.ButtonGroup Subtitulada;
     private javax.swing.JTree arbol;
     private javax.swing.JButton jButton1;
     private javax.swing.JButton jButton2;
     private javax.swing.JButton jButton3;
     private javax.swing.JButton jButton4;
     private javax.swing.JButton jButton5;
+    private javax.swing.JButton jButton7;
+    private javax.swing.JButton jButton8;
     private javax.swing.JLabel jLabel1;
+    private javax.swing.JLabel jLabel10;
+    private javax.swing.JLabel jLabel11;
+    private javax.swing.JLabel jLabel12;
+    private javax.swing.JLabel jLabel13;
+    private javax.swing.JLabel jLabel14;
+    private javax.swing.JLabel jLabel15;
+    private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
+    private javax.swing.JLabel jLabel2;
+    private javax.swing.JLabel jLabel3;
+    private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
+    private javax.swing.JLabel jLabel6;
+    private javax.swing.JLabel jLabel7;
+    private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel9;
+    private javax.swing.JRadioButton jRadioButton1;
+    private javax.swing.JRadioButton jRadioButton2;
+    private javax.swing.JRadioButton jRadioButton3;
+    private javax.swing.JRadioButton jRadioButton4;
+    private javax.swing.JRadioButton jRadioButton5;
+    private javax.swing.JRadioButton jRadioButton6;
+    private javax.swing.JRadioButton jRadioButton7;
+    private javax.swing.JRadioButton jRadioButton8;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JButton jb_login;
     private javax.swing.JDialog jd_arbol;
-    private javax.swing.JTextField tf_contasena;
+    private javax.swing.JDialog jd_pelicula;
+    private javax.swing.JDialog jd_series;
+    private javax.swing.JTextField peli1;
+    private javax.swing.JSpinner peli2;
+    private javax.swing.JComboBox<String> peli3;
+    private javax.swing.JTextField peli4;
+    private javax.swing.JTextField peli5;
+    private javax.swing.JTextField peli6;
+    private javax.swing.JComboBox<String> peli7;
+    private javax.swing.JTextField serie1;
+    private javax.swing.JSpinner serie2;
+    private javax.swing.JComboBox<String> serie3;
+    private javax.swing.JTextField serie4;
+    private javax.swing.JSpinner serie5;
+    private javax.swing.JTextField serie6;
+    private javax.swing.JComboBox<String> serie7;
+    private javax.swing.JTextField tf_contrasena;
     private javax.swing.JTextField tf_usuario;
     // End of variables declaration//GEN-END:variables
     private ArrayList<Pelicula> peliculas = new ArrayList();
     private ArrayList<Serie> series = new ArrayList();
+
 }
